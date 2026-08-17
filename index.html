@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <title>My Workspace</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/supabase.js"></script>
+
   <script>
     (async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      window.location.href = session ? "projects.html" : "login.html";
+      try {
+        console.log("1. Supabase:", supabase);
+        console.log("2. Auth:", supabase.auth);
+
+        const {
+          data: { session },
+          error
+        } = await supabase.auth.getSession();
+
+        console.log("3. Session:", session);
+        console.log("4. Error:", error);
+
+        if (error) {
+          throw error;
+        }
+
+        window.location.href = session
+          ? "projects.html"
+          : "login.html";
+
+      } catch (error) {
+        console.error("SUPABASE ERROR:", error);
+
+        document.body.innerHTML = `
+          <div style="
+            background:#0f1115;
+            color:white;
+            min-height:100vh;
+            padding:40px;
+            font-family:Arial;
+          ">
+            <h2>Supabase Error</h2>
+            <pre style="color:#ff6b6b;white-space:pre-wrap;">${error.stack || error.message || error}</pre>
+          </div>
+        `;
+      }
     })();
   </script>
 </head>
-<body style="background:#0f1115;">
+
+<body style="background:#0f1115;color:white;">
+  <div style="text-align:center;margin-top:100px;">
+    Đang kiểm tra đăng nhập...
+  </div>
 </body>
+
 </html>
