@@ -5,14 +5,19 @@
 // ============================================================
 
 const SUPABASE_URL = "https://wkjgyhqytahkpkhxrbaq.supabase.co";
-// This is the "publishable key" (Supabase's newer name for the anon key) — safe for the browser since RLS is enabled.
+
+// Public publishable key — safe for browser use.
+// Database access must still be protected by RLS.
 const SUPABASE_ANON_KEY = "sb_publishable_KvfuSsFHi4ybUSLh1sHCyQ_G_zys30Q";
 
-// Loaded from the Supabase CDN script tag in each HTML page
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    detectSessionInUrl: true,
-  },
-});
+window.supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY,
+  {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true,
+    },
+  }
+);
