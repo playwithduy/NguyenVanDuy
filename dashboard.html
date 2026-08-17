@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard — My Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+
+    <main class="app-main">
+      <div class="app-topbar">
+        <h1 class="app-topbar__title" id="project-title">Loading…</h1>
+        <span class="app-topbar__user" id="user-email"></span>
+      </div>
+
+      <h2 class="section-heading">Dashboard</h2>
+
+      <div class="stats-grid">
+        <div class="stat-card stat-card--total">
+          <div class="stat-card__value" id="stat-total">–</div>
+          <div class="stat-card__label">Tasks</div>
+        </div>
+        <div class="stat-card stat-card--completed">
+          <div class="stat-card__value" id="stat-completed">–</div>
+          <div class="stat-card__label">Completed</div>
+        </div>
+        <div class="stat-card stat-card--overdue">
+          <div class="stat-card__value" id="stat-overdue">–</div>
+          <div class="stat-card__label">Overdue</div>
+        </div>
+      </div>
+
+      <div class="dashboard-sections">
+        <div class="surface-card">
+          <h3 class="section-heading">📅 Deadline gần nhất</h3>
+          <div id="upcoming-deadlines"></div>
+        </div>
+        <div class="surface-card">
+          <h3 class="section-heading">📝 Notes gần đây</h3>
+          <div id="recent-notes"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

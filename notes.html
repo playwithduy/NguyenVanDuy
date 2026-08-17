@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Notes — My Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/notes.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+
+    <main class="app-main">
+      <div class="app-topbar">
+        <h1 class="app-topbar__title" id="project-title">Loading…</h1>
+        <button class="btn btn--primary" id="add-note-btn">+ Note mới</button>
+      </div>
+
+      <div class="notes-toolbar">
+        <input type="text" id="note-search" placeholder="🔍 Tìm note..." />
+      </div>
+
+      <div class="notes-grid" id="notes-grid"></div>
+
+      <div class="empty-state" id="notes-empty" style="display:none;">
+        <span class="empty-state__icon">📝</span>
+        <p>Chưa có note nào. Ghi lại ý tưởng đầu tiên của bạn!</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/notes.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calendar — My Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/calendar.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+
+    <main class="app-main">
+      <div class="app-topbar">
+        <h1 class="app-topbar__title" id="project-title">Loading…</h1>
+      </div>
+
+      <div class="calendar-toolbar">
+        <span class="calendar-month-label" id="calendar-month-label"></span>
+        <div class="calendar-nav">
+          <button class="btn btn--ghost" id="cal-prev">←</button>
+          <button class="btn btn--ghost" id="cal-today">Today</button>
+          <button class="btn btn--ghost" id="cal-next">→</button>
+        </div>
+      </div>
+
+      <div class="calendar-weekdays">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+
+      <div class="calendar-grid" id="calendar-grid"></div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/calendar.js"></script>
+</body>
+</html>

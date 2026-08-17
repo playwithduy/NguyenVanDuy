@@ -1,0 +1,33 @@
+/* SETTINGS — settings.html */
+
+.settings-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 520px;
+}
+
+.settings-section-title {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.settings-section-desc {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.settings-danger {
+  border-color: rgba(241, 101, 101, 0.4);
+}
+
+.member-notice {
+  display: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}

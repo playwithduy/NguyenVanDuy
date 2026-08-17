@@ -1,0 +1,81 @@
+/* DASHBOARD — dashboard.html */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 560px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  text-align: center;
+}
+
+.stat-card__value {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.stat-card--total .stat-card__value { color: var(--text); }
+.stat-card--completed .stat-card__value { color: var(--teal); }
+.stat-card--overdue .stat-card__value { color: var(--red); }
+
+.stat-card__label {
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .dashboard-sections { grid-template-columns: 1fr; }
+}
+
+.section-heading {
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.deadline-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.deadline-row:last-child { border-bottom: none; }
+
+.deadline-title { flex: 1; }
+
+.deadline-date {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.note-preview {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.note-preview:last-child { border-bottom: none; }
+
+.note-preview__title { font-size: 14px; margin-bottom: 4px; }
+.note-preview__excerpt { color: var(--text-muted); font-size: 13px; line-height: 1.5; }

@@ -1,0 +1,70 @@
+/* CALENDAR — calendar.html */
+
+.calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.calendar-month-label {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.calendar-nav { display: flex; gap: 8px; }
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendar-cell {
+  aspect-ratio: 1 / 0.85;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.calendar-cell:hover { border-color: var(--accent); }
+.calendar-cell--empty { visibility: hidden; }
+.calendar-cell--today { border-color: var(--accent); background: var(--surface-2); }
+
+.calendar-cell__day { font-size: 13px; font-weight: 600; }
+
+.calendar-cell__dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  font-size: 11px;
+}
+
+.calendar-dot--more { color: var(--text-faint); font-family: var(--font-mono); }
+
+.day-modal-list { margin-top: 12px; display: flex; flex-direction: column; gap: 8px; max-height: 260px; overflow-y: auto; }
+.day-modal-item { display: flex; align-items: center; gap: 8px; font-size: 14px; }
+
+@media (max-width: 560px) {
+  .calendar-cell__day { font-size: 11px; }
+  .calendar-cell { padding: 5px; }
+}

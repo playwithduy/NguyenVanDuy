@@ -1,0 +1,60 @@
+/* TASKS — tasks.html */
+
+.tasks-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tasks-toolbar input,
+.tasks-toolbar select {
+  width: auto;
+  min-width: 140px;
+}
+
+#search-input { flex: 1; min-width: 180px; }
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+
+.task-row__checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.task-row__main { flex: 1; min-width: 0; }
+
+.task-row__title-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-row__title {
+  font-weight: 600;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-row__meta {
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.task-row__actions { display: flex; gap: 4px; }

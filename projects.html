@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Projects — My Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+</head>
+<body>
+  <main class="app-main" style="max-width:1080px;margin:0 auto;">
+    <div class="projects-topbar">
+      <div class="projects-brand">
+        <span class="projects-brand__mark">M</span>
+        <span class="auth-brand__name">My Workspace</span>
+      </div>
+      <div class="projects-user">
+        <span id="user-email"></span>
+        <button class="btn btn--ghost" id="logout-btn">🚪 Logout</button>
+      </div>
+    </div>
+
+    <h1 class="projects-heading">My Projects</h1>
+
+    <div class="projects-grid" id="projects-list"></div>
+
+    <div class="empty-state" id="projects-empty" style="display:none;">
+      <span class="empty-state__icon">📁</span>
+      <p>Bạn chưa có project nào. Tạo project đầu tiên để bắt đầu!</p>
+    </div>
+
+    <div class="projects-create-row">
+      <button class="btn btn--primary" id="create-project-btn">+ Tạo Project</button>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

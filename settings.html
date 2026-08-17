@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project Settings — My Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/settings.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+
+    <main class="app-main">
+      <div class="app-topbar">
+        <h1 class="app-topbar__title" id="project-title">Loading…</h1>
+      </div>
+
+      <p class="member-notice" id="member-notice">
+        Bạn là member của project này. Chỉ owner mới có thể đổi mật khẩu hoặc xóa project.
+      </p>
+
+      <div class="settings-sections">
+        <div class="surface-card">
+          <h3 class="settings-section-title">Project Info</h3>
+          <p class="settings-section-desc">Cập nhật tên và mô tả project.</p>
+          <form id="info-form">
+            <label for="settings-name">Project Name</label>
+            <input type="text" id="settings-name" required maxlength="80" data-owner-only disabled />
+
+            <label for="settings-description">Description</label>
+            <textarea id="settings-description" rows="3" data-owner-only disabled></textarea>
+
+            <button type="submit" class="btn btn--primary" id="info-submit" data-owner-only style="margin-top:16px;">
+              Save changes
+            </button>
+          </form>
+        </div>
+
+        <div class="surface-card" data-owner-only>
+          <h3 class="settings-section-title">Change Project Password</h3>
+          <p class="settings-section-desc">Đổi mật khẩu bảo vệ project này.</p>
+          <form id="password-form">
+            <label for="new-password">New password</label>
+            <input type="password" id="new-password" required minlength="4" />
+
+            <label for="confirm-password">Confirm new password</label>
+            <input type="password" id="confirm-password" required minlength="4" />
+
+            <button type="submit" class="btn btn--primary" id="password-submit" style="margin-top:16px;">
+              Change password
+            </button>
+          </form>
+        </div>
+
+        <div class="surface-card settings-danger" data-owner-only>
+          <h3 class="settings-section-title">Danger Zone</h3>
+          <p class="settings-section-desc">Xóa vĩnh viễn project cùng toàn bộ tasks và notes.</p>
+          <button class="btn btn--danger" id="delete-project-btn">Delete Project</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

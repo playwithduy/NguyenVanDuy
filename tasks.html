@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tasks — My Workspace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/tasks.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <div id="sidebar-root"></div>
+
+    <main class="app-main">
+      <div class="app-topbar">
+        <h1 class="app-topbar__title" id="project-title">Loading…</h1>
+        <button class="btn btn--primary" id="add-task-btn">+ Thêm task</button>
+      </div>
+
+      <div class="tasks-toolbar">
+        <input type="text" id="search-input" placeholder="🔍 Tìm task theo tên..." />
+        <select id="filter-status">
+          <option value="all">Tất cả status</option>
+          <option value="todo">Todo</option>
+          <option value="in_progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <select id="filter-priority">
+          <option value="all">Tất cả priority</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+          <option value="urgent">Urgent</option>
+        </select>
+        <select id="sort-select">
+          <option value="deadline_asc">Deadline gần nhất</option>
+          <option value="deadline_desc">Deadline xa nhất</option>
+          <option value="priority">Priority</option>
+        </select>
+      </div>
+
+      <div id="tasks-list"></div>
+
+      <div class="empty-state" id="tasks-empty" style="display:none;">
+        <span class="empty-state__icon">📋</span>
+        <p>Không có task nào phù hợp. Thêm task mới để bắt đầu theo dõi deadline!</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/supabase.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/modal.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="js/guard.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/tasks.js"></script>
+</body>
+</html>
